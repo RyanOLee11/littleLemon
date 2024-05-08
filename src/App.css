@@ -1,38 +1,733 @@
-.App {
-  text-align: center;
+:root{
+  --primary-color: #495E57;
+  --secondary-color: #F4CE14;
+  --rounded: 16px;
+  --title-size: 64px;
+  --subtitle-size: 40px;
+  --lead-text-size: 18px;
+  --text-size: 16px;
+  --section-title-size: 20px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Markazi Text";
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+}
+.body-wrapper{
+  flex-grow: 1;
+  width: 100%;
+}
+nav{
+  width: 100%;
+  color: var(--primary-color);
+  flex-grow: 0;
+}
+nav .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+.nav-logo{
+  width: 200px;
+}
+.nav-menu,
+.close-menu{
+  align-items: center;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--primary-color);
+  padding: 0 20px;
+  font-size: 24px;
+}
+.close-menu{
+  text-align: right;
+  width: 100%;
+  padding: 0;
+}
+.mobile-nav-links {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 60%; /* Adjust as needed */
+  background-color: #fff; /* Adjust as needed */
+  list-style: none;
+  padding: 20px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobile-nav-links li {
+  padding: 10px 0;
+}
+
+.open.mobile-nav-links {
+  transform: translateX(0);
+  transition: all 0.5s ease-in-out;
+}
+.nav-order-online{
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px 30px;
+  border-radius: var(--rounded);
+  font-size: 20px;
+  margin: 0 20px;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in, color 0.15s ease-in;
+  border: none;
+}
+.nav-order-online:hover{
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+
+}
+footer {
+  width: 100%;
+  background-color: var(--primary-color);
+  border-top: 1px solid #e0e0e0;
+}
+footer .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.footer-logo img{
+  height: 260px;
+  padding: 0 20px;
+}
+.footer-links{
+  display: flex;
+  justify-items: flex-start;
+  align-items: center;
+  flex-direction: column;
+  font-size: var(--subtitle-size);
+}
+.footer-links a{
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  margin: 10px;
+  text-align: left;
+}
+.footer-info{
+  display: flex;
+  justify-items: flex-start;
+  align-items: center;
+  flex-direction: column;
+  font-size: var(--subtitle-size);
+}
+.footer-info p{
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  margin: 10px;
+  text-align: left;
+}
+.footer-socials{
+  display: flex;
+  justify-items: space-between;
+  align-items: center;
+  flex-direction: column;
+  font-size: var(--subtitle-size);
+  padding: 0 20px;
+}
+.footer-icon-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.footer-socials a{
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  margin: 10px;
+  text-align: left;
+}
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding:20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#home{
+  background-color: var(--primary-color);
+}
+#home .container{
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+.welcome-text h1{
+  font-size: var(--title-size);
+  color: var(--secondary-color);
+  margin: 20px;
+}
+.welcome-text h2{
+  font-size: var(--subtitle-size);
+  color: white;
+  margin: 20px;
+}
+.welcome-text p{
+  font-size: var(--lead-text-size);
+  color: white;
+  margin: 20px;
+}
+.welcome-text button,
+.button{
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 15px 30px;
+  border-radius: var(--rounded);
+  font-size: 20px;
+  margin: 20px;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in, color 0.15s ease-in;
+  border: none;
+  text-wrap: nowrap;
+}
+.welcome-image{
+  display: grid;
+  justify-items: flex-end;
+}
+.welcome-image img{
+  margin: 0px 0 -60px 0;
+  border-radius: var(--rounded);
+  height: 400px;
+}
+.specials {
+  height: 100%;
+  padding: 2.5rem 0;
+  margin: 0 auto;
+}
+
+.header-container {
+  display: grid;
+  align-items: center;
+  grid-column-gap: 2rem;
+  grid-template: "info image";
+  grid-template-columns: 85fr 15fr;
+  margin-bottom: 2rem;
+}
+
+.header-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.specials-title {
+  line-height: 10px;
+  font-size: var(--subtitle-size);
+}
+.food-card {
+  background: #edefee;
+  border-radius: 16px;
+  height: 100%;
+  min-height: 27rem;
+  width: 18rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.food-card-image {
+  width: 100%;
+}
+
+.food-card-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  color: black;
+}
+
+.food-card-description {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  color: #495E57;
+}
+
+.food-card-price {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  color: #ee9972;
+}
+
+.food-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.food-card-body-header {
+  flex-grow: 1;
+}
+
+.food-card-body-title-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.food-card-delivery {
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-end;
+  margin-top: 1rem;
+}
+
+.food-card-delivery-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0.5rem 0 0 ;
+  color: black;
+  cursor: pointer;
+}
+.food-card-delivery svg{
+  cursor: pointer;
+}
+.testimonial-background {
+  background: #495e57;
+}
+
+.testimonials {
+  padding: 30px 0;
+}
+
+.testimonials-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 85fr 15fr;
+  margin-bottom: 40px;
+}
+
+.testimonials-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.testimonial-title {
+  color: white;
+  line-height: 10px;
+  font-size: var(--subtitle-size);
+}
+.testimonial-card {
+  background: white;
+  border-radius: 16px;
+  height: 100%;
+  min-height: 10rem;
+  width: 18rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.testimonial-description {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #4a4a4a;
+  font-size: 14px;
+}
+
+.testimonial-card-author {
+  color: black;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+.testimonial-card-container {
+  display: flex;
+  padding: 20px 0;
+}
+
+.testimonial-profile-picture {
+  border-radius: 5px;
+  width: 50px;
+  object-fit: cover;
+}
+.testimonial-rating svg{
+  color: var(--secondary-color);
+}
+.about {
+  padding: 5rem 0;
+  display: grid;
+  align-items: center;
+  grid-column-gap: 2rem;
+  grid-template: "info image";
+  grid-template-columns: 60fr 40fr;
+  margin: 0 auto;
+}
+
+.about-title {
+  padding: 20px 0;
+  font-weight: medium;
+  font-size: 56px;
+  line-height: 30px;
+}
+.about-subtitle {
+  padding: 20px 0;
+  font-size: 40px;
+  line-height: 20px;
+  color: #333333;
+}
+.about-description {
+  padding: 20px 0;
+  color: black;
+  padding-right: 6rem;
+}
+
+.about-image-bruchetta {
+  margin-top: 5rem;
+  margin-right: 5rem;
+  grid-area: image;
+  width: 100%;
+  height: 20rem;
+  justify-self: end;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.about-image-restaurant {
+  grid-area: image;
+  width: 100%;
+  height: 20rem;
+  justify-self: end;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.res-content-wrapper {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.73)), url("https://a.cdn-hotels.com/gdcs/production141/d778/6b200721-9661-4680-aca2-d6e33ce46cf0.jpg");
+  width: 100%;
+  background-size: cover;
+}
+
+.res-content-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 100px;
+  margin: 0px auto;
+  padding: 80px 80px;
+}
+
+.text {
+  margin-top: 100px;
+  color: #fff;
+  width: 60%;
+}
+
+.text h2 {
+  margin-bottom: 30px;
+}
+
+.text p {
+  margin-bottom: 20px;
+}
+
+.form {
+  width: 40%;
+  height: auto;
+  background-color: #fff;
+  color: #333333;
+  border-radius: 10px;
+  padding: 30px 40px 50px;
+  text-align: left;
+}
+
+.form h1 {
+  font-size: 24pt;
+  margin-bottom: 7px;
+}
+
+.form p {
+  font-size: smaller;
+  margin-bottom: 30px;
+}
+
+
+fieldset {
+  border: none;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.field label {
+  font-size: 18px;
+  margin: 0 0 5px 0px;
+  font-weight: 500;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid rgba(51,51,51,0.3);
+  border-radius: 5px;
+  width: 100%;
+}
+
+input[type=datetime-local] {
+  color: #949494
+}
+
+.guestsdate {
+  display: grid;
+  grid-template-columns: 68% 28%;
+  gap: 4%;
+}
+
+.occasion {
+  display: flex;
+  flex-direction: column;
+}
+
+.options {
+  padding-right: 10px;
+  border: 1px solid rgba(51,51,51,0.3);
+  border-radius: 5px;
+}
+
+select {
+  padding: 10px;
+  outline: none;
+  border: none;
+  width: 100%;
+  font-size: 15px;
+  color: #949494;
+}
+
+.reserve-btn {
+  width: 100%;
+  padding: 20px;
+  cursor: pointer;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  color:#fff;
+}
+
+.reserve-btn:hover {
+  background-color: #495e57;
+  transition: 0.3s;
+}
+
+.error-message {
+  font-size: 15px;
+  color: red;
+  margin-top: 5px;
+}
+
+
+
+
+/* Media Queries */
+
+
+
+
+@media screen and (max-width: 768px){
+  /* this is mobile */
+  .nav-menu{
+    display: flex !important;
   }
-  to {
-    transform: rotate(360deg);
+  .nav-order-online{
+    display: none !important;
+  }
+  .nav-links
+  {
+    display: none !important;
+  }
+  footer .container{
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
+  #home .container{
+    grid-template-columns: 1fr;
+  }
+  .welcome-image img{
+    display: none;
+  }
+  .specials {
+    height: 100%;
+    padding: 2.5rem 0;
+    max-width: 65rem;
+    margin: 0 auto;
+  }
+
+  .header-container {
+    display: grid;
+    align-items: center;
+    grid-column-gap: 2rem;
+    grid-template: "info image";
+    grid-template-columns: 85fr 15fr;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+
+  .header-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .specials-title {
+    line-height: 10px;
+  }
+
+  .food-card {
+    background: #edefee;
+    border-radius: 16px;
+    height: 100%;
+    min-height: 27rem;
+    width: 18rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  .testimonials-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .testimonial-card {
+    background: white;
+    border-radius: 16px;
+    height: 100%;
+    min-height: 10rem;
+    width: 18rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .about {
+    height: 100%;
+    padding: 1rem 1rem;
+    display: grid;
+    align-items: center;
+    grid-column-gap: 2rem;
+    grid-template: "info" "image";
+    grid-template-rows: 1fr 0.75fr;
+    max-width: 65rem;
+    margin: 0 auto;
+  }
+
+  .about-title {
+    font-family: "Markazi Text";
+    font-weight: medium;
+    font-size: 36px;
+    line-height: 30px;
+  }
+  .about-subtitle {
+    font-family: "Markazi Text";
+    font-size: 32px;
+    line-height: 20px;
+    color: #333333;
+  }
+  .about-description {
+    color: black;
+    padding-right: 6rem;
+    
+  }
+
+  .about-image-bruchetta {
+    grid-area: image;
+    display: none;
+    width: 100%;
+    height: 20rem;
+    border-radius: 16px;
+    object-fit: cover;
+  }
+
+  .about-image-restaurant {
+    grid-area: image;
+    width: 100%;
+    height: 10rem;
+    justify-self: end;
+    border-radius: 16px;
+    object-fit: cover;
+    padding: 0;
+  }
+
+
+  .res-content-container {
+    flex-direction: column;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.text {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.text p {
+    margin-bottom: 0;
+}
+
+.form {
+    width: 100%;
+    margin-top: -50px
+}
+
+.guestsdate {
+    display: flex;
+    flex-direction: column;
+}
+  
+}
+@media screen and (min-width: 768px){
+  /* this is desktop */
+  .nav-menu{
+    display: none !important;
+  }
+  .nav-order-online{
+    display: block !important;
+  }
+  .nav-links{
+    display: flex !important;
   }
 }

@@ -20,9 +20,24 @@
   flex-direction: column;
   background-color: #fff;
 }
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  flex-grow: 1;
+  background-color: #fff;
+}
 .body-wrapper{
   flex-grow: 1;
   width: 100%;
+}
+.reservation-body{
+  display: flex;
+}
+.non-valid{
+  color: red;
 }
 nav{
   width: 100%;
@@ -492,7 +507,7 @@ fieldset {
 }
 
 input {
-  padding: 10px;
+  padding: 10px 2px;
   border: 1px solid rgba(51,51,51,0.3);
   border-radius: 5px;
   width: 100%;
@@ -563,6 +578,9 @@ select {
   /* this is mobile */
   .nav-menu{
     display: flex !important;
+  }
+  .wrapper{
+    height: auto !important;
   }
   .nav-order-online{
     display: none !important;
@@ -694,9 +712,7 @@ select {
 
   .res-content-container {
     flex-direction: column;
-    width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 0px;
 }
 
 .text {
@@ -709,8 +725,12 @@ select {
 }
 
 .form {
-    width: 100%;
-    margin-top: -50px
+    width: 90%;
+    margin: auto;
+    margin-top: -50px;
+    padding: 10px;
+    margin-bottom: 20px;
+
 }
 
 .guestsdate {

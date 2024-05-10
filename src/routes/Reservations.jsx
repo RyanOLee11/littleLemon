@@ -5,13 +5,13 @@ import { Footer } from '../components/Footer';
 
 const Reservations = () => {
     return (
-        <>
+        <div class="wrapper">
         <NavBar />
-        <div className="body-wrapper">
+        <div className="body-wrapper reservation-body">
             <ReservationForm />
         </div>
         <Footer />
-        </>
+        </div>
     )
 }
 

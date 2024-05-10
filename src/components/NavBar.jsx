@@ -16,8 +16,14 @@ const NavBar = () => {
             setIsMenuOpen(false);
         }
         // scroll to section
-        const section = document.getElementById(pRegion);
-        section.scrollIntoView({behavior: 'smooth'});
+        // check if the section exists
+        if (!document.getElementById(pRegion)){
+            // I want to go to the home page if the section does not exist
+            window.location.href = '/';
+        }else{
+            const section = document.getElementById(pRegion);
+            section.scrollIntoView({behavior: 'smooth'});
+        }
     }
 
     

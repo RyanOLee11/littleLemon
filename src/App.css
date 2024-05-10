@@ -56,6 +56,9 @@ nav .container{
   align-items: center;
   width: 50%;
 }
+.nav-links li{
+  cursor: pointer;
+}
 .nav-logo{
   width: 200px;
 }

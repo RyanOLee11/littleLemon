@@ -12,6 +12,8 @@ function ReservationForm() {
     })
 
     const [formError, setFormError] = useState({})
+    const [formKey, setFormKey] = useState(0);
+
 
     const onChangeHandler = (event) => {
         setFormData(()=>({
@@ -58,11 +60,20 @@ function ReservationForm() {
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
-        console.table(formData)
 
         let isValid = validateForm()
         if(isValid) {
-            alert("Submitted")
+            setFormData({
+                name: "",
+                email: "",
+                telephone: "",
+                occasion: "",
+                guests: "",
+                date: "",
+            });
+            setFormError({});
+            alert("Submitted");
+            setFormKey(prevKey => prevKey + 1); // increment formKey to force re-render
         }
     }
 
@@ -77,7 +88,7 @@ function ReservationForm() {
             <div className="form">
                 <h1>Reserve a Table</h1>
                 <p>Please fill in and submit form to book your reservation at Little Lemon.</p>
-                <form onSubmit={onSubmitHandler}>
+                <form key={formKey} onSubmit={onSubmitHandler}>
                     <fieldset>
                         <div className="field">
                             <label htmlFor="name">Full Name</label>

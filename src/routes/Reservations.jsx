@@ -5,7 +5,7 @@ import { Footer } from '../components/Footer';
 
 const Reservations = () => {
     return (
-        <div class="wrapper">
+        <div className="wrapper">
         <NavBar />
         <div className="body-wrapper reservation-body">
             <ReservationForm />
